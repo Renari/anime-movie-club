@@ -1,0 +1,17 @@
+{
+    "extends": "./tsconfig.common.json",
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "commonjs",
+      "outDir": "dist/backend",
+      "sourceMap": false
+    },
+    "include": [
+      "src/backend/**/*.ts",
+      "src/backend/**/*.tsx"
+    ],
+    "exclude": [
+      "src/app"
+    ]
+  }
+  

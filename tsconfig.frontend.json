@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.common.json",
+  "compilerOptions": {
+    "outDir": "dist/frontend",
+    "lib": [
+      "dom",
+      "dom.iterable"
+    ]
+  },
+  "include": [
+    "src/frontend/**/*.ts",
+    "src/frontend/**/*.tsx",
+    "src/frontend/**/*.vue"
+  ],
+  "exclude": [
+    "src/server"
+  ]
+}
