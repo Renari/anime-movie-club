@@ -5,12 +5,20 @@ module.exports = {
     config
       .entry("app")
       .clear()
-      .add("./src/app/main.ts")
+      .add("./src/frontend/main.ts")
       .end();
-    config.resolve.alias.set("@", path.join(__dirname, "./src/app"));
+    config.resolve.alias.set("@", path.join(__dirname, "./src/frontend"));
 
     config.plugin("html").tap(args => {
-      args[0].template = path.join(__dirname, "./src/app/public/index.html");
+      args[0].template = path.join(
+        __dirname,
+        "./src/frontend/public/index.html"
+      );
+      return args;
+    });
+
+    config.plugin("fork-ts-checker").tap(args => {
+      args[0].configFile = "tsconfig.frontend.json";
       return args;
     });
 
